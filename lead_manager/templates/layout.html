@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lead Manager</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="logo">F</div>
+      <h2>Accounting</h2>
+      <nav>
+        <ul>
+          <li class="active">Home</li>
+          <li>Partners</li>
+          <li>Accounting</li>
+          <li>CRM</li>
+        </ul>
+      </nav>
+      <div class="user">Logged in as: {{ user if user else 'Guest' }}</div>
+      <a class="btn-logout" href="{{ url_for('logout') }}">Logout</a>
+    </aside>
+    <main class="main">
+      {% block content %}{% endblock %}
+    </main>
+  </div>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
